@@ -4,7 +4,7 @@ namespace Ampersand\CurrencyConverter\Model\Currency\Import;
 
 use Exception;
 use GuzzleHttp\Client;
-use Magento\Framework\Serialize\Serializer\Json;
+use Magento\Framework\Json\Helper\Data;
 use Magento\Directory\Model\CurrencyFactory;
 use Ampersand\CurrencyConverter\Helper\Config;
 use Magento\Directory\Model\Currency\Import\AbstractImport;
@@ -24,7 +24,7 @@ class FreeCurrencyConverter extends AbstractImport
      * @param \Ampersand\CurrencyConverter\Helper\Config $helper
      * @param \GuzzleHttp\Client $client
      */
-    public function __construct(CurrencyFactory $currencyFactory, Json $jsonHelper, Config $helper, Client $client)
+    public function __construct(CurrencyFactory $currencyFactory, Data $jsonHelper, Config $helper, Client $client)
     {
         parent::__construct($currencyFactory);
         $this->jsonHelper = $jsonHelper;
