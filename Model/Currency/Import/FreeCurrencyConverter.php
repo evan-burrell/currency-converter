@@ -59,7 +59,7 @@ class FreeCurrencyConverter extends AbstractImport
      */
     private function getData($body)
     {
-        return $this->jsonHelper->unserialize($body);
+        return $this->jsonHelper->jsonDecode($body);
     }
 
     /**
